@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { Car } from '../../car';
@@ -15,10 +15,17 @@ export class CarTableComponent implements OnInit {
   @Input()
   cars: Car[];
 
+  @Output()
+  deleteCarById = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
 
+  }
+
+  doPassToParent(id: number): void {
+    this.deleteCarById.emit(id);
   }
 
 }

@@ -1,6 +1,6 @@
 <app-tool-header [headerText]="headerText"></app-tool-header>
 
-<app-car-table [cars]="cars"></app-car-table>
+<app-car-table [cars]="cars" (deleteCarById)="doRemoveCar($event)"></app-car-table>
 
 <app-car-form buttonText="Add Car"
   (submitCar)="doAddCar($event)"></app-car-form>
