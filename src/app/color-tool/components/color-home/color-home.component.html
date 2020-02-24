@@ -9,12 +9,9 @@
     {{color}}
   </li>
 </ul>
-<form [formGroup]="colorForm">
-  <div>
-    <label for="color-input">Color:</label>
-    <input type="text" id="color-input"
-      formControlName="color" />
-  </div>
-  <button type="button" (click)="addColor()">
-    Add Color</button>
-</form>
+<!-- submitColor is tied to the submitColor Output event emitter
+from the color-form.component.ts. The $event is emitted from doSubmitColor()-->
+<!-- Step 2 -->
+<app-color-form buttonText="Add Color"
+  (submitColor)="doAddColor($event)"></app-color-form>
+

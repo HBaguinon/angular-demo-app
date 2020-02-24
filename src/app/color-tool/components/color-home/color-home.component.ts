@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-color-home',
@@ -12,7 +12,7 @@ export class ColorHomeComponent implements OnInit {
 
   colors = ['purple', 'lilac', 'fuschia', 'red'];
 
-  colorForm: FormGroup;
+
 
   // traditionally you would do
   // private fb: Formbuilder;
@@ -21,20 +21,15 @@ export class ColorHomeComponent implements OnInit {
   // }
   // Note: the only time you need to do this is if you need to type more
 
-  constructor(private fb: FormBuilder) { } // check traditionally above^
+  constructor() { } // check traditionally above^
 
   ngOnInit(): void {
-
-    this.colorForm = this.fb.group({
-      color: '',
-    });
   }
 
-  addColor() {
+  // Step 3
+  doAddColor(color: string) {
 
-    this.colors = this.colors.concat(this.colorForm.value.color);
-
-    this.colorForm.reset();
+    this.colors = this.colors.concat(color);
 
     // an old way to do this is:
     // this.colors.push(this.colorForm.value.color);
