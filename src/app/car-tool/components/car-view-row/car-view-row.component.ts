@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Car } from '../../car';
-// import { CARS } from '../../cars';
 
 @Component({
   selector: '.car-view-row',
@@ -11,11 +10,16 @@ export class CarViewRowComponent implements OnInit {
   @Input()
   car: Car;
 
-  // cars = CARS;
+  @Output()
+  deleteCar = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  doRemoveCar(): void {
+    this.deleteCar.emit(this.car.id);
   }
 
 }
