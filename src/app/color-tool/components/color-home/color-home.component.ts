@@ -9,6 +9,8 @@ export class ColorHomeComponent implements OnInit {
 
   headerText = 'Color Tool'; // referenced in template HTML
 
+  colors = ['purple', 'lilac', 'fuschia', 'red'];
+
   constructor() { }
 
   ngOnInit(): void {
