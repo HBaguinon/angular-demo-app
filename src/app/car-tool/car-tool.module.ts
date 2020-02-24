@@ -7,9 +7,10 @@ import { CarHomeComponent } from './components/car-home/car-home.component';
 import { CarTableComponent } from './components/car-table/car-table.component';
 
 import { Car } from './car';
+import { CarViewRowComponent } from './components/car-view-row/car-view-row.component';
 
 @NgModule({
-  declarations: [CarHomeComponent, CarTableComponent],
+  declarations: [CarHomeComponent, CarTableComponent, CarViewRowComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

@@ -10,17 +10,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let car of cars">
-      <td>{{ car.id }}</td>
-      <td>{{ car.make }}</td>
-      <td>{{ car.model }}</td>
-      <td>{{ car.year }}</td>
-      <td>{{ car.color }}</td>
-      <td>{{ car.price }}</td>
-    </tr>
-  </tbody>
+      <tr class="car-view-row" *ngFor="let car of cars" [car]="car"></tr>
+    </tbody>
 </table>
-<form [formGroup]="carForm">
+<!-- <form [formGroup]="carForm">
     <div>
       <label for="make-input">Make:</label>
       <input type="text" id="make-input"
@@ -48,4 +41,4 @@
     </div>
     <button type="button" (click)="addCar()">
       Add Car</button>
-  </form>
+  </form> -->
