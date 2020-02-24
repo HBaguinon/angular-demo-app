@@ -41,6 +41,9 @@ export class CarHomeComponent implements OnInit {
     const newCar: Car = {
       ...this.carForm.value,
       id: Math.max(...this.cars.map(c => c.id), 0) + 1,
+
+      // My version for ID:
+      // id: this.cars[this.cars.length - 1].id + 1
       // ...this.carForm.value will replace the following:
       //
       // make: this.carForm.value.make,
