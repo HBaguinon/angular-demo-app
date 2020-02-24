@@ -1,6 +1,9 @@
-<header>
-  <h1>{{headerText}}</h1>
-</header>
+<!-- Hard coded header text-->
+<!-- <app-tool-header headerText="Color Tool"></app-tool-header> -->
+
+<!-- Angular expression, found in color-home.component.ts -->
+<app-tool-header [headerText]="headerText"></app-tool-header>
+
 <ul>
   <li *ngFor="let color of colors">
     {{color}}
