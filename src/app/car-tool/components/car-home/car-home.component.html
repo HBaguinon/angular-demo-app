@@ -1,55 +1,5 @@
-<header>
-  <h1>{{headerText}}</h1>
-</header>
+<app-tool-header [headerText]="headerText"></app-tool-header>
 
-<table>
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>make</th>
-      <th>model</th>
-      <th>year</th>
-      <th>car</th>
-      <th>price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let car of cars">
-      <td>{{ car.id }}</td>
-      <td>{{ car.make }}</td>
-      <td>{{ car.model }}</td>
-      <td>{{ car.year }}</td>
-      <td>{{ car.color }}</td>
-      <td>{{ car.price }}</td>
-    </tr>
-  </tbody>
-</table>
-<form [formGroup]="carForm">
-    <div>
-      <label for="make-input">Make:</label>
-      <input type="text" id="make-input"
-        formControlName="make" />
-    </div>
-    <div>
-      <label for="model-input">Model:</label>
-      <input type="text" id="model-input"
-        formControlName="model" />
-    </div>
-    <div>
-      <label for="year-input">Year:</label>
-      <input type="number" id="year-input"
-        formControlName="year" />
-    </div>
-    <div>
-        <label for="color-input">Color:</label>
-        <input type="text" id="color-input"
-          formControlName="color" />
-    </div>
-    <div>
-        <label for="price-input">Price:</label>
-        <input type="number" id="price-input"
-          formControlName="price" />
-    </div>
-    <button type="button" (click)="addCar()">
-      Add Car</button>
-  </form>
+<app-car-table></app-car-table>
+
+
